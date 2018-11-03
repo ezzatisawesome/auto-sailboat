@@ -1,0 +1,1 @@
+This is a high school project to construct and build a semi-autonomous sailboat. This sailboat will ncorporate a magnetometer and a magnetic rotary encoder to do so. An algorithm based on a project report by Henning Seeberg Stenersen will be used.
