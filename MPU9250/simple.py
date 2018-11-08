@@ -17,4 +17,4 @@ try:
 		# print 'Temperature: {:.3f} C'.format(m)
 		sleep(0.5)
 except KeyboardInterrupt:
-	print('bye ...)'
+	print('bye ...')
