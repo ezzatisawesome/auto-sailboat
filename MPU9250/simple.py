@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from mpu9250 import mpu9250
+from MPU9250.mpu9250 import mpu9250
 from time import sleep
 
 imu = mpu9250()
