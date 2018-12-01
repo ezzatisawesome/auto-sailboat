@@ -1,15 +1,10 @@
 from __future__ import print_function
 from __future__ import division
 
-try:
-	import smbus2 as smbus
-except ImportError:
-	print('WARNING: Using fake hardware')
-	from .fakeHW import smbus
-	# from fake_rpi import smbus
 
 from time import sleep
 import struct
+import smbus
 
 # Todo:
 # - replace all read* with the block read?
@@ -19,8 +14,8 @@ import struct
 ################################
 MPU9250_ADDRESS = 0x68
 AK8963_ADDRESS  = 0x0C
-DEVICE_ID       = 0x71
-WHO_AM_I        = 0x75
+DEVICE_ID       = 0x75
+WHO_AM_I        = 0x71
 PWR_MGMT_1      = 0x6B
 INT_PIN_CFG     = 0x37
 INT_ENABLE      = 0x38
