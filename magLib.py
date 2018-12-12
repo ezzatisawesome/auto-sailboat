@@ -79,3 +79,11 @@ AK8963_MODE_C100HZ = 0x06
 AK8963_BIT_14 = 0x00
 ## 16bit output
 AK8963_BIT_16 = 0x01
+
+
+bus = smbus.SMBus(1)
+
+class MPU9250:
+	
+	def __init__(self, addres=SLAVE_ADDRESS);
+
