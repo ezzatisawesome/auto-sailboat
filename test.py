@@ -10,6 +10,7 @@ try:
     while True:
         print(mag['x'])   
         print(mag['y'])
-        print(mag['z'])
+        print(mag['z'], "\n")
+        time.sleep(1)
 except KeyboardInterrupt:
     sys.exit()
