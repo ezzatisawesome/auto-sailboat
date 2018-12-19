@@ -38,9 +38,9 @@ try:
       min_z = mag['z']
     time.sleep(1/sample_freq)  
 except KeyboardInterrupt:
-  print "Max : (" , max_x , "," , max_y , "," , max_z , ")"
-  print "\nMin : (" , min_x, "," , min_y , "," , min_z , ")"
-  print "\nAverages : (" , (max_x+min_x)/2 , "," , (max_y+min_y)/2 , "," , (max_z+min_z)/2 , ")"
+  print("Max : (" , max_x , "," , max_y , "," , max_z , ")")
+  print("\nMin : (" , min_x, "," , min_y , "," , min_z , ")")
+  print("\nAverages : (" , (max_x+min_x)/2 , "," , (max_y+min_y)/2 , "," , (max_z+min_z)/2 , ")")
   vmax_x = max_x - ((max_x+min_x)/2)
   vmax_y = max_y - ((max_y+min_y)/2)
   vmax_z = max_z - ((max_z+min_z)/2)
@@ -55,5 +55,5 @@ except KeyboardInterrupt:
   x_scale = avg_rad/avgs_x
   y_scale = avg_rad/avgs_y
   z_scale = avg_rad/avgs_z
-  print "\nScales : (" , x_scale , "," , y_scale , "," , z_scale , ")"
+  print("\nScales : (" , x_scale , "," , y_scale , "," , z_scale , ")")
 

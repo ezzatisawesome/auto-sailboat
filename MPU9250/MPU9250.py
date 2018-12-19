@@ -109,9 +109,9 @@ class MPU9250:
     def searchDevice(self):
         who_am_i = bus.read_byte_data(self.address, WHO_AM_I)
         if(who_am_i == DEVICE_ID):
-            return true
+            return true #vscode does not know what true is defined to--maybe import boolean
         else:
-            return false
+            return false #vscode does not know what false is defined to--maybe import boolean?
 
     ## Configure MPU-9250
     #  @param [in] self The object pointer.
