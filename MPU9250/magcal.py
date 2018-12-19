@@ -1,7 +1,6 @@
 import MPU9250
 import time
 import sys
-import time
 import math
 mpu9250 = MPU9250.MPU9250()
 mag = mpu9250.readMagnet()
