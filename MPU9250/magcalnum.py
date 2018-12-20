@@ -1,3 +1,6 @@
+#This is a program to find min, max, avg, and etc. raw magnetometer values
+
+
 import MPU9250
 import time
 import sys
