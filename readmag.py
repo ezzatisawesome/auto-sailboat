@@ -12,7 +12,7 @@ try:
         y = mag['y'] #y mag value
         z = mag['z'] #z mag value
 
-        print("{:.4f} {:.4f} {:.4f}".format(x, y, z)) #format
+        print("{:.4f},{:.4f},{:.4f}".format(x, y, z)) #format
         
         time.sleep(0.5) #repeat every half second
 
