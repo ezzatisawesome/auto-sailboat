@@ -61,5 +61,3 @@ except KeyboardInterrupt:
   #print("\nScales : (" , x_scale , "," , y_scale , "," , z_scale , ")")
 
 def calibrated_mag_values(): #trying to create a function that inputs raw mag values and outputs calibrated values
-
-
