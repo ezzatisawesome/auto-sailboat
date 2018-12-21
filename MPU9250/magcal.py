@@ -5,6 +5,7 @@ import MPU9250
 import time
 import sys
 import math
+
 mpu9250 = MPU9250.MPU9250()
 mag = mpu9250.readMagnet()
 
@@ -22,9 +23,9 @@ vmin_x = 0
 vmin_y = 0
 vmin_z = 0
 sample_freq = 512
+
 try:
   while True:
-    mag = mpu9250.readMagnet()
     if(mag['x'] > max_x):
       max_x = mag['x']
     if(mag['y'] > max_y):
@@ -57,5 +58,8 @@ except KeyboardInterrupt:
   x_scale = avg_rad/avgs_x
   y_scale = avg_rad/avgs_y
   z_scale = avg_rad/avgs_z
-  print("\nScales : (" , x_scale , "," , y_scale , "," , z_scale , ")")
+  #print("\nScales : (" , x_scale , "," , y_scale , "," , z_scale , ")")
+
+def calibrated_mag_values(): #trying to create a function that inputs raw mag values and outputs calibrated values
+
 
