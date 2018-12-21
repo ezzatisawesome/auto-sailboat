@@ -1,4 +1,4 @@
-import MPU9250.MPU9250
+import MPU9250
 import smbus
 import time
 import sys
