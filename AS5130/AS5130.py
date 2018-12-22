@@ -1,12 +1,10 @@
-import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO #import GPIO library to access GPIO pins on Raspi
 import time
 import math
 
-GIO.setwarnings(False) #got from random website
-GIO.setmode(IO.BCM) #got from random website
-GIO.setup(19,IO.IN) #got from random website
+GPIO.setwarnings(False)
+GPIO.setmode(GPIO.BOARD) #set up GPIO pins on Raspi
+GPIO.setup(12, GPIO.IN)
 
-p = GIO.PWM(output channel , frequency of PWM signal) #got from random website
-
-angle = 0 #angle value
-angle = (365/256)*(257(ton/(ton*toff)-1) #equation from datasheet of AS5130 to convert pwn to degree value (HAVE TO DEFINE WHAT "ton" and "toff" are)
+mode = GPIO.getmode()
+print(mode)

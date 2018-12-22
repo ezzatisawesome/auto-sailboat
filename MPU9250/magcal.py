@@ -9,7 +9,7 @@ import math
 mpu9250 = MPU9250.MPU9250()
 mag = mpu9250.readMagnet()
 
-max_x = 0
+max_x = 0 
 max_y = 0
 max_z = 0
 min_x = 0
@@ -58,6 +58,4 @@ except KeyboardInterrupt:
   x_scale = avg_rad/avgs_x
   y_scale = avg_rad/avgs_y
   z_scale = avg_rad/avgs_z
-  #print("\nScales : (" , x_scale , "," , y_scale , "," , z_scale , ")")
-
-def calibrated_mag_values(): #trying to create a function that inputs raw mag values and outputs calibrated values
+  print("\nScales : (" , x_scale , "," , y_scale , "," , z_scale , ")")
