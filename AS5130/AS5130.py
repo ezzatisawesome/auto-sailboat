@@ -6,6 +6,9 @@ GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD) #set up GPIO pins on Raspi
 GPIO.setup(12, GPIO.IN)
 
-mode = GPIO.getmode()
 modes = {-1:"Unset", 11:"BCM", 10:"BOARD"}
-print(mode)
+mode = GPIO.getmode(12)
+
+print(modes[mode])
+
+GPIO.cleanup()
