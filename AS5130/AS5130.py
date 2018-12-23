@@ -4,7 +4,7 @@ import math
 
 GPIO.setwarnings(False) #set GPIO warnings to false
 GPIO.setmode(GPIO.BOARD) #set up GPIO pins on Raspi
-GPIO.setup(12, GPIO.IN) #setup pin 12 for output
+GPIO.setup(12, GPIO.IN) #setup pin 12 for input
 pwm = GPIO.PWM(12, 100) #initialize PWM on pwmPin 100Hz frequency
 
 dc = 0 #set duty cycle to 0
