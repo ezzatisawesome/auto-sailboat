@@ -14,7 +14,7 @@ try:
         y = mag['y'] #y mag value
         z = mag['z'] #z mag value
 
-        heading = calib.heading(x, y)
+        heading = calib.heading(self, x, y)
 
         print(heading)
         
