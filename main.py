@@ -4,7 +4,7 @@ import sys
 import time
 
 mpu9250 = MPU9250.MPU9250()
-calib = IMU_CALIB.calib
+calib = IMU_CALIB.calib()
 
 try:
      while True:
@@ -14,7 +14,7 @@ try:
         y = mag['y'] #y mag value
         z = mag['z'] #z mag value
 
-        heading = calib.heading(self, x, y)
+        heading = calib.heading(x, y)
 
         print(heading)
         
