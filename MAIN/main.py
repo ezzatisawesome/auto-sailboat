@@ -1,11 +1,12 @@
-import MPU9250
+import autoSailboat.MPU9250
 import AS5130.AS5130
 import MPU9250.calfunc #magnetometer function library
 import time
 import math
 import sys
 
-rad_to_deg = MPU9250.calfunc.raw_to_deg #radians to degrees object
+mpu9250 = MPU9250.MPU9250()
+rad_to_deg = MPU9250.calfunc.raw_to_deg() #radians to degrees object
 
 try:
     while True:
