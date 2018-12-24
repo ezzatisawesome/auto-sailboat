@@ -1,4 +1,4 @@
-import autoSailboat.MPU9250
+from autoSailboat import MPU9250
 import autoSailboat.AS5130.AS5130
 import time
 import math
