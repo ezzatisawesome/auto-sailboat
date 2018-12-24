@@ -8,6 +8,7 @@ GPIO.setup(12, GPIO.IN, pull_up_down=GPIO.PUD_UP) #initialize pin 12 for input a
 
 try:
   while True:
+    
 
 except KeyboardInterrupt:
 
