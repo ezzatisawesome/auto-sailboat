@@ -1,5 +1,5 @@
 import MPU9250
-import AS5130.AS5130
+#import AS5130.AS5130
 import time
 import math
 import sys
