@@ -1,13 +1,10 @@
 import MPU9250
-#import AS5130
-import time
-import math
+import IMU_CALIB
 import sys
+import time
 
 mpu9250 = MPU9250.MPU9250()
-
-def heading(x, y):
-    return(180 * math.atan2(x, y)/math.pi)
+calib = IMU_CALIB.calib
 
 try:
      while True:
@@ -17,12 +14,11 @@ try:
         y = mag['y'] #y mag value
         z = mag['z'] #z mag value
 
-        heading(x, y)
-       
-        #print("{:.4f}, {:.4f}, {:.4f}".format(x, y, z)) #format
-        print(heading(x, y))
+        heading = calib.heading(x, y)
+
+        print(heading)
         
-        time.sleep(1) #repeat every half second
+        time.sleep(1) #repeat every second
 
 except KeyboardInterrupt:
      sys.exit
