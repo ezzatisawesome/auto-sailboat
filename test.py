@@ -1,17 +1,11 @@
 import MPU9250
-#import AS5130
-import time
-import math
+import IMU_CALIB
 import sys
-
-mpu9250 = MPU9250.MPU9250()
-
-def heading(x, y):
-    return(180 * math.atan2(x, y)/math.pi)
 
 try:
      while True:
         mag = mpu9250.readMagnet()
+        heading = IMU_CALIB.heading()
         
         x = mag['x'] #x mag value
         y = mag['y'] #y mag value

@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO #import GPIO library
+import smbus
 import time
 import sys
 
