@@ -1,7 +1,8 @@
 import math
 
-class calfunc():
-    def raw_to_deg():
-        math.radians()
+class calfunc:
+    x = float(x)
+    def raw_to_deg(x):
+        math.radians(x)
 
    # def calibrated():

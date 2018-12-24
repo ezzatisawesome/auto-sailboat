@@ -1,17 +1,20 @@
 from MPU9250 import MPU9250
-from MPU9250 import calfunc
+#from MPU9250 import calfunc
 #import AS5130.AS513
 import time
 import math
 import sys
 
-mpu9250 = MPU9250.MPU9250()
-calfunc = MPU9250.calfunc() #radians to degrees object
+mpu9250 = MPU9250()
+#calfunc = calfunc.calfunc() #radians to degrees object
+
+def rad_to_deg(x):
+    math.radians(x)
 
 try:
     while True:
         mag = mpu9250.readMagnet()
-        raw_to_deg = calfunc.raw_to_deg()
+       # rad_to_deg = calfunc.raw_to_deg()
         x = mag['x'] #x mag value
         y = mag['y'] #y mag value
         z = mag['z'] #z mag value
@@ -21,9 +24,9 @@ try:
         zc = rad_to_deg(z)
 
 
-        print("{:.4f}, {:.4f}, {:.4f}".format(xc, yc, zc)) #format
+        print("{}, {}, {}".format(xc, yc, zc)) #format
         
-        time.sleep(0.2) #repeat every half second
+        time.sleep(1) #repeat every half second
 
 except KeyboardInterrupt:
     sys.exit
