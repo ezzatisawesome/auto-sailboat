@@ -1,6 +1,5 @@
 import autoSailboat.MPU9250
-import AS5130.AS5130
-import MPU9250.calfunc #magnetometer function library
+import autoSailboat.AS5130.AS5130
 import time
 import math
 import sys
