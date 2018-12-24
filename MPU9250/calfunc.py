@@ -1,7 +1,7 @@
 import math
 
-def raw_to_deg():
-    math.radians()
+class calfunc():
+    def raw_to_deg():
+        math.radians()
 
-def calibrated():
-
+   # def calibrated():

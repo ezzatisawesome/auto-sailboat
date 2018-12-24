@@ -96,7 +96,7 @@ AK8963_BIT_16 = 0x01
 ## smbus
 bus = smbus.SMBus(1)
 
-## MPU9250 I2C Controll class
+## MPU9250 I2C Control class
 class MPU9250:
 
     ## Constructor
