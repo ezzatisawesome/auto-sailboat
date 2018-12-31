@@ -12,7 +12,7 @@ try:
         y = mag['y'] #y mag value
         z = mag['z'] #z mag value
 
-        print("{:f} {:f} {:f}" .format(x, y, z))
+        print("{:>.3f}  {:>.3f}  {:>.3f}" .format(x, y, z))
         
         time.sleep(1) #repeat every second
 
