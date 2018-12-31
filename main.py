@@ -1,10 +1,8 @@
 import MPU9250
-import IMU_CALIB
 import sys
 import time
 
 mpu9250 = MPU9250.MPU9250()
-calib = IMU_CALIB.calib()
 
 try:
      while True:
@@ -14,9 +12,7 @@ try:
         y = mag['y'] #y mag value
         z = mag['z'] #z mag value
 
-        heading = calib.heading(x, y)
-
-        print(heading)
+        print("{:f} {:f} {:f}" .format(x, y, z))
         
         time.sleep(1) #repeat every second
 
