@@ -24,10 +24,10 @@ try:
 
         comp_heading = IMU_CALIB.mag_tilt_comp(magx, magy, magz) #creating instance of tilt compensation method in IMU_CALIB lib
 
-        print("{:>.4f} {:>.4f}" .format(pitch, roll))
+        #print("{:>.4f} {:>.4f}" .format(pitch, roll))
         print("{:>.4f}" .format(comp_heading))
 
-        time.sleep(2) #repeat two every seconds
+        time.sleep(.5) #repeat two every seconds
 
 except KeyboardInterrupt:
      sys.exit
