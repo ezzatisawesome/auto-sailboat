@@ -31,7 +31,7 @@ class IMU_CALIB:
 
         return(self.comp_heading)
 
-
+ 
         #sudo code
     #magXcomp = mag_raw[0]*cos(pitch)+mag_raw[2]*sin(pitch);
     #magYcomp = mag_raw[o]*sin(roll)*sin(pitch)+mag_raw[1]*cos(roll)-mag_raw[2]*sin(roll)*cos(pitch);
