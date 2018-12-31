@@ -5,23 +5,20 @@ class IMU_CALIB:
         pass
     #@classmethod
     def pitch(self, accelx, accely, accelz): # method to get pitch from raw accelerometer values
-        
-        self.accXnorm = accelx/(math.sqrt(accelx*accelx + accely*accely + accelz*accelz)) # normalize accel x values
-        self.calcpitch = math.asin(self.accXnorm)
 
-        return(selfcalcpitch)
+        accXnorm = accelx/(math.sqrt(accelx*accelx + accely*accely + accelz*accelz)) # normalize accel x values
+        self.calcpitch = round(math.asin(accXnorm), 4) # round to 4 decimal places
+
+        return(self.calcpitch)
 
     #@classmethod
     def roll(self, accelx, accely, accelz): # method to get roll from raw accelerometer values
 
-        self.accXnorm = accelx/(math.sqrt(accelx*accelx + accely*accely + accelz*accelz)) # normalize accel x values
-        self.accYnorm = accely/(math.sqrt(accelx*accelx + accely*accely + accelz*accelz)) # normalize accel y values
+        accYnorm = accely/(math.sqrt(accelx*accelx + accely*accely + accelz*accelz)) # normalize accel y values
+        self.calcroll = round(-1 * math.asin(accYnorm/math.cos(self.pitch)), 4) # round to 4 decimal places
 
-        calcroll = -1 * math.asin(self.accYnorm/math.cos(self.pitch))
+        return(self.calcroll)
 
-        return(calcroll)
-
-    
     def tilt_comp(self, magx, magy, magz):
 
         self.magXcomp = magx*math.cos(self.pitch) + magz*math.sin(self.pitch) # calucluate compensated magx values
