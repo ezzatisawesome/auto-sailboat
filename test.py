@@ -21,12 +21,11 @@ try:
 
         IMU_CALIB.pitch_roll(accelx, accely, accelz)
 
-        print(IMU_CALIB.pitch_roll)
-        print(IMU_CALIB.pitch_roll)
+        print("{:} {:}" .format(IMU_CALIB.pitch_roll, IMU_CALIB.pitch_roll))
 
-        #print("{:>.3f}  {:>.3f}  {:>.3f}" .format(x, y, z))
-        
-        time.sleep(1) # repeat every second
+        #print("{:>.3f}  {:>.3f}  {:>.3f}" .format(x, y, z)
+
+        time.sleep(2) # repeat every second
 
 except KeyboardInterrupt:
      sys.exit
