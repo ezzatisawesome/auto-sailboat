@@ -22,7 +22,7 @@ try:
         pitch = IMU_CALIB.pitch(accelx, accely, accelz)
         roll = IMU_CALIB.roll(accelx, accely, accelz)
 
-        print("{:} {:}" .format(pitch(accelx, accely, accelz), roll(accelx, accely, accelz)))
+        print("{:>.4f} {:>.4f}" .format(pitch(accelx, accely, accelz), roll(accelx, accely, accelz)))
 
         #print("{:>.3f}  {:>.3f}  {:>.3f}" .format(x, y, z)
 

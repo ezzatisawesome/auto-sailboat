@@ -9,7 +9,7 @@ class IMU_CALIB:
         self.accXnorm = accelx/(math.sqrt(accelx*accelx + accely*accely + accelz*accelz)) # normalize accel x values
         self.calcpitch = math.asin(self.accXnorm)
 
-        return(self.calcpitch)
+        return(selfcalcpitch)
 
     #@classmethod
     def roll(self, accelx, accely, accelz): # method to get roll from raw accelerometer values
@@ -17,9 +17,9 @@ class IMU_CALIB:
         self.accXnorm = accelx/(math.sqrt(accelx*accelx + accely*accely + accelz*accelz)) # normalize accel x values
         self.accYnorm = accely/(math.sqrt(accelx*accelx + accely*accely + accelz*accelz)) # normalize accel y values
 
-        self.calcroll = -1 * math.asin(self.accYnorm/math.cos(self.pitch))
+        calcroll = -1 * math.asin(self.accYnorm/math.cos(self.pitch))
 
-        return(self.calcroll)
+        return(calcroll)
 
     
     def tilt_comp(self, magx, magy, magz):
