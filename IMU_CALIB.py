@@ -26,6 +26,9 @@ class IMU_CALIB:
 
         self.comp_heading = 180 * math.atan2(magYcomp, magXcomp) / math.pi #heading function and convert to degrees
 
+        if self.comp_heading < 0:
+            self.comp_heading += 360
+
         return(self.comp_heading)
 
  
