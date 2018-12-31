@@ -21,8 +21,8 @@ class IMU_CALIB:
 
     def tilt_comp(self, magx, magy, magz):
 
-        magXcomp = magx*math.cos(self.pitch) + magz*math.sin(self.pitch) # calucluate compensated magx values
-        magYcomp = magx*math.sin(self.roll)*math.sin(self.pitch) + magy*math.cos(self.roll) - magz*math.sin(self.roll)*math.cos(self.pitch) # calculate compensated magy values
+        magXcomp = magx*math.cos(self.calcpitch) + magz*math.sin(self.calcpitch) # calucluate compensated magx values
+        magYcomp = magx*math.sin(self.calcroll)*math.sin(self.calcpitch) + magy*math.cos(self.calcroll) - magz*math.sin(self.calcroll)*math.cos(self.calcpitch) # calculate compensated magy values
 
         self.comp_heading = 180 * math.atan2(magYcomp, magXcomp) / math.pi
 
