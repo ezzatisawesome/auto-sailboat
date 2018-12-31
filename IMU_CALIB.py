@@ -2,13 +2,13 @@ import math
 
 class IMU_CALIB:
     
-    @classmethod
-    def pitch_roll(cls, accelx, accely, accelz): # method to get pitch roll from raw accelerometer values
+    #@classmethod
+    def pitch_roll(self, accelx, accely, accelz): # method to get pitch roll from raw accelerometer values
         
-        cls.accXnorm = accelx/(math.sqrt(accelx*accelx + accely*accely + accelz*accelz)) # normalize accel x values
-        cls.accYnorm = accely/(math.sqrt(accelx*accelx + accely*accely + accelz*accelz)) # normalize accel x values
+        self.accXnorm = accelx/(math.sqrt(accelx*accelx + accely*accely + accelz*accelz)) # normalize accel x values
+        self.accYnorm = accely/(math.sqrt(accelx*accelx + accely*accely + accelz*accelz)) # normalize accel x values
 
-        cls.pitch = math.asin(cls.accXnorm)
-        cls.roll = -1 * math.asin(cls.accYnorm/math.cos(cls.pitch))
+        self.pitch = math.asin(self.accXnorm)
+        self.roll = -1 * math.asin(self.accYnorm/math.cos(self.pitch))
 
-        return(cls.pitch, cls.roll)
+        return(self.pitch, self.roll)
