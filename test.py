@@ -3,13 +3,13 @@ import MPU9250
 import sys
 import time
 
-mpu9250 = MPU9250.MPU9250()
+MPU9250 = MPU9250.MPU9250()
 IMU_CALIB = IMU_CALIB.IMU_CALIB()
 
 try:
      while True:
-        mag = mpu9250.readMagnet()
-        accel = mpu9250.readAccel()
+        mag = MPU9250.readMagnet()
+        accel = MPU9250.readAccel()
         
         magx = mag['x'] # x mag value
         magy = mag['y'] # y mag value
@@ -19,9 +19,10 @@ try:
         accely = accel['y'] # y mag value
         accelz = accel['z'] # z mag value
 
-        norm = IMU_CALIB.pitch_roll(accelx, accely, accelz)
+        pitch = IMU_CALIB.pitch(accelx, accely, accelz)
+        roll = IMU_CALIB.roll(accelx, accely, accelz)
 
-        print("{:}" .format(IMU_CALIB.pitch_roll(accelx, accely, accelz)))
+        print("{:} {:}" .format(pitch(accelx, accely, accelz), roll(accelx, accely, accelz)))
 
         #print("{:>.3f}  {:>.3f}  {:>.3f}" .format(x, y, z)
 
