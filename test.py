@@ -19,9 +19,9 @@ try:
         accely = accel['y'] # y mag value
         accelz = accel['z'] # z mag value
 
-        IMU_CALIB.pitch_roll(accelx, accely, accelz)
+        norm = IMU_CALIB.pitch_roll(accelx, accely, accelz)
 
-        print("{:} {:}" .format(IMU_CALIB.pitch_roll, IMU_CALIB.pitch_roll))
+        print("{:}" .format(IMU_CALIB.pitch_roll(accelx, accely, accelz)))
 
         #print("{:>.3f}  {:>.3f}  {:>.3f}" .format(x, y, z)
 
