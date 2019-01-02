@@ -19,25 +19,16 @@ try:
           accely = accel['y'] #y mag value
           accelz = accel['z'] #z mag value
           
-          pitch = IMU_CALIB.pitch(accelx, accely, accelz) #creating instance of pitch method in IMU_CALIB lib
-          roll = IMU_CALIB.roll(accelx, accely, accelz) #creating instance of roll method in IMU_CALIB lib
+          #pitch = IMU_CALIB.pitch(accelx, accely, accelz) #creating instance of pitch method in IMU_CALIB lib
+          #roll = IMU_CALIB.roll(accelx, accely, accelz) #creating instance of roll method in IMU_CALIB lib
+
+
+          calibrated_x = IMU_CALIB.mag_calibration(magx, 22.33, 0.944)
+          calibrated_y = IMU_CALIB.mag_calibration(magy, 30.577, 1.037)
+          calibrated_z = IMU_CALIB.mag_calibration(magz, 9.071, 0.972)
+          tiltcomp_heading = IMU_CALIB.mag_tilt_comp(calibrated_x, calibrated_y, calibrated_z, accelx, accely, accelz) #creating instance of tilt compensation method in IMU_CALIB lib
           
-          comp_heading = IMU_CALIB.mag_tilt_comp(magx, magy, magz) #creating instance of tilt compensation method in IMU_CALIB lib
-          
-          magXmax = 70.741
-          magXmin = -26.081
-          magYmax = 77.029
-          magYmin = -15.875
-          magZmax = 58.573
-          magZmin = -40.431
 
-          calibration = IMU_CALIB.mag_calibration(magx, magy, magz, magXmax, magXmin, magYmax, magYmin, magZmax, magZmin)
-
-          print(calibration)
-
-          #print("{:>.4f} {:>.4f}" .format(pitch, roll))
-          # print("{:>.4f}" .format(comp_heading))
-           
           time.sleep(2) #repeat two every seconds
 
 except KeyboardInterrupt:
