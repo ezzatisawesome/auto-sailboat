@@ -27,7 +27,8 @@ try:
           calibrated_y = IMU_CALIB.mag_calibration(magy, 30.577, 1.037)
           calibrated_z = IMU_CALIB.mag_calibration(magz, 9.071, 0.972)
           tiltcomp_heading = IMU_CALIB.mag_tilt_comp(calibrated_x, calibrated_y, calibrated_z, accelx, accely, accelz) #creating instance of tilt compensation method in IMU_CALIB lib
-          
+
+          print("{.>3f}" .format(tiltcomp_heading))
 
           time.sleep(2) #repeat two every seconds
 
