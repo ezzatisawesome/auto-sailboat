@@ -1,2 +1,1 @@
-from .rudder import *
-from .sail import *
+from .actuators import *

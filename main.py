@@ -1,18 +1,12 @@
 '''
 loop that runs all other files in order
 '''
+from autonomous import navigation, sheeting
+from sensors import windvane, gps
+from sensors.IMU import *
 
-import sensors
-import sys
-import time
+sheet = sheeting.sheet
+navigation = navigation.navigation
 
-
-IMU = sensors.IMU.IMU.MPU9250
-VANE = sensors.AS5130.AS5130
-
-class run:   #name will change
-    mag = IMU.readMagnet()
-
-    def __init__():
-        pass
-    
+def main():
+    pass
