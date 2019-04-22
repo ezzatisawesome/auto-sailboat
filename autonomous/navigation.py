@@ -15,4 +15,4 @@ class navigation:
         return atan2(change_long, change_lat)
     
     def cal_distance(self):
-        return self.R * arccos(sin(self.lat1) * sin(self.lat2) * cos(lat1) * cos(self.lat2) * cos(self.lon1-self.long2))
+        return self.R * acos(sin(self.lat1) * sin(self.lat2) * cos(lat1) * cos(self.lat2) * cos(self.lon1-self.long2))
