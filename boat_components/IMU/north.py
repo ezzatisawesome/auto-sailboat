@@ -3,7 +3,7 @@ import sys
 
 try:
     while True:
-        mag = MP9250.readMagnet()
+        mag = MPU9250.readMagnet()
         print(" mx = " , ( mag['x'] ))
         print(" my = " , ( mag['y'] ))
         print(" mz = " , ( mag['z'] ))
