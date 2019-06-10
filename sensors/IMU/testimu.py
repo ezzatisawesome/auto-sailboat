@@ -1,6 +1,8 @@
-from IMU import MPU9250
+import IMU
 import sys
 import time
+
+MPU9250 = IMU.MPU9250()
 
 try:
     while True:
