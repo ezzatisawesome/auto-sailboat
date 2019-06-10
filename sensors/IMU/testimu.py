@@ -1,4 +1,4 @@
-from .IMU import MPU9250
+from IMU import MPU9250
 import sys
 import time
 
