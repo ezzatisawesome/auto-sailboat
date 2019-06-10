@@ -1,5 +1,6 @@
-from IMU import MPU9250
+from .IMU import MPU9250
 import sys
+import time
 
 try:
     while True:
@@ -7,5 +8,6 @@ try:
         print(" mx = " , ( mag['x'] ))
         print(" my = " , ( mag['y'] ))
         print(" mz = " , ( mag['z'] ))
+        time.sleep(1)
 except KeyboardInterrupt:
     sys.exit()
