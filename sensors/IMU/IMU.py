@@ -16,7 +16,6 @@
 
 import smbus
 import time
-import boolean
 
 ## MPU9250 Default I2C slave address
 SLAVE_ADDRESS        = 0x68
