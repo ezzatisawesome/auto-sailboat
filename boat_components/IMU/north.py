@@ -1,5 +1,5 @@
 from IMU import MPU9250
-import system
+import sys
 
 try:
     while True:
