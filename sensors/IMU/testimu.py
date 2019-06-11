@@ -16,6 +16,9 @@ try:
         ax = accel['x']
         ay = accel['y']
         az = accel['z']
+        print(mx)
+        print(my)
+        print(mz)
         north = calib.mag_tilt_comp(mx, my, mz, ax, ay, az)
         print(north)
         time.sleep(2)
