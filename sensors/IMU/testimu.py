@@ -17,6 +17,6 @@ try:
         ay = (accel['y'])
         az = (accel['z'])
         print(calib.mag_tilt_comp(mx, my, mz, ax, ay, az))
-        time.sleep(1)
+        time.sleep(2)
 except KeyboardInterrupt:
     sys.exit()
