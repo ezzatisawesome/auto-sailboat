@@ -10,13 +10,12 @@ accel = MPU9250.readAccel()
 north = calib.mag_tilt_comp()
 try:
     while True:
-        
-        mx = mag['x']
-        my = mag['y']
-        mz = mag['z']
-        ax = accel['x']
-        ay = accel['y']
-        az = accel['z']
+        mx = (mag['x'])
+        my = (mag['y'])
+        mz = (mag['z'])
+        ax = (accel['x'])
+        ay = (accel['y'])
+        az = (accel['z'])
         print(north(mx, my, mz, ax, ay, az))
         time.sleep(1)
 except KeyboardInterrupt:
