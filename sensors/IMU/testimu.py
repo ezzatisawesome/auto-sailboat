@@ -1,8 +1,8 @@
 import sys
 import time
-from sensors.IMU import IMU_CALIB
-from sensors.IMU import IMU
-from sensors.IMU import madgwick
+import IMU_CALIB
+import IMU
+import madgwick
 
 MPU9250 = IMU.MPU9250()
 calib = IMU_CALIB.IMU_CALIB()
