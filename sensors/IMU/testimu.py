@@ -31,7 +31,6 @@ try:
         mag = MPU9250.readMagnet()
         accel = MPU9250.readAccel()
         gyro = MPU9250.readGyro()
-        filter = madgwick.update_imu()
         mx = mag['x']
         my = (mag['y'])
         mz = mag['z']
@@ -41,8 +40,8 @@ try:
         gx = gyro['x']
         gy = gyro['y']
         gz = gyro['z']
-        quaternion = filter([mx, my, mz], [ax, ay, az], [gx, gy, gz])
-        print(filter.quaternion)
+        quaternion = madgwick.update_imu([mx, my, mz], [ax, ay, az], [gx, gy, gz])
+        print(quaternion)
         time.sleep(2)
 except KeyboardInterrupt:
     sys.exit()
