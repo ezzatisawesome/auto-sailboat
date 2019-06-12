@@ -7,7 +7,7 @@ import micropython_fusion
 
 MPU9250 = IMU.MPU9250()
 calib = IMU_CALIB.IMU_CALIB()
-madgwick = madgwick.MadgwickAHRS(1/256, [1,0,0,0], 1)
+madgwick = madgwick.MadgwickAHRS(1/256, (1,0,0,0), 1)
 
 
 """
@@ -42,7 +42,7 @@ try:
         gy = gyro['y']
         gz = gyro['z']
 
-        quaternion = madgwick.update([mx, my, mz], [ax, ay, az], [gx, gy, gz])
+        quaternion = madgwick.update((mx, my, mz), (ax, ay, az), (gx, gy, gz))
         print(quaternion)
         time.sleep(2)
 except KeyboardInterrupt:
