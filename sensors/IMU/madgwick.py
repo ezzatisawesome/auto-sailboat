@@ -67,7 +67,7 @@ class MadgwickAHRS:
             warnings.warn("magnetometer is zero")
             return
         magnetometer /= norm(magnetometer)
-
+        z=q.conj()
         h = q * (Quaternion(0, magnetometer[0], magnetometer[1], magnetometer[2]) * q.conj())
         b = np.array([0, norm(h[1:3]), 0, h[3]])
 
