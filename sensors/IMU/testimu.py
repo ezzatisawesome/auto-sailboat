@@ -41,8 +41,10 @@ try:
         gx = gyro['x']
         gy = gyro['y']
         gz = gyro['z']
-
-        quaternion = madgwick.update((gx, gy, gz), (ax, ay, az), (mx, my, mz))
+        m = [mx, my, mz]
+        a = [ax, ay, az]
+        g = [gx, gy, gz]
+        quaternion = madgwick.update(m, a, g)
         print(quaternion)
         time.sleep(2)
 except KeyboardInterrupt:
