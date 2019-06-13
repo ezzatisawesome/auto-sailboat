@@ -50,9 +50,9 @@ try:
         g = [gx, gy, gz]
         
         north = madgwick.update(m, a, g)
-        north = Quaternion.to_euler_angles
+        north = Quaternion.to_euler_angles(north)
         
-        print(quaternion)
+        print(north)
         
         time.sleep(2)
 except KeyboardInterrupt:
