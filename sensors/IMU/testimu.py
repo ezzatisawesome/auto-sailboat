@@ -11,6 +11,8 @@ from quaternion import Quaternion
 MPU9250 = IMU.MPU9250()
 calib = IMU_CALIB.IMU_CALIB()
 
+quat = Quaternion(1, 0, 0, 0)
+madgwick = MadgwickAHRS(1/256, quat, 1)
 
 """
 try:
@@ -46,10 +48,12 @@ try:
         m = [mx, my, mz]
         a = [ax, ay, az]
         g = [gx, gy, gz]
-        quat = Quaternion(1, 0, 0, 0)
-        madgwick = MadgwickAHRS(1/256, quat, 1)
-        quaternion = madgwick.update(m, a, g)
+        
+        north = madgwick.update(m, a, g)
+        north = Quaternion.to_euler_angles
+        
         print(quaternion)
+        
         time.sleep(2)
 except KeyboardInterrupt:
     sys.exit()
