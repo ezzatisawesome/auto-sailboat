@@ -7,7 +7,6 @@ import micropython_fusion
 
 MPU9250 = IMU.MPU9250()
 calib = IMU_CALIB.IMU_CALIB()
-madgwick = madgwick.MadgwickAHRS(1/256, (1,0,0,0), 1)
 
 
 """
@@ -44,6 +43,7 @@ try:
         m = [mx, my, mz]
         a = [ax, ay, az]
         g = [gx, gy, gz]
+        madgwick = madgwick.MadgwickAHRS(1/256, (1,0,0,0), 1)
         quaternion = madgwick.update(m, a, g)
         print(quaternion)
         time.sleep(2)
