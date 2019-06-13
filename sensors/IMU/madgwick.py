@@ -96,6 +96,7 @@ class MadgwickAHRS:
         # Integrate to yield quaternion
         q += qdot * self.samplePeriod
         self.quaternion = Quaternion(q / norm(q))  # normalise quaternion
+        return self.quaternion
 
     def update_imu(self, gyroscope, accelerometer):
         """
