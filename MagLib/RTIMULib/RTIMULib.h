@@ -36,7 +36,6 @@
 #include "IMUDrivers/RTIMU.h"
 #include "IMUDrivers/RTIMUNull.h"
 #include "IMUDrivers/RTIMUMPU9150.h"
-#include "IMUDrivers/RTIMUMPU9250.h"
 #include "IMUDrivers/RTIMUGD20HM303D.h"
 #include "IMUDrivers/RTIMUGD20M303DLHC.h"
 #include "IMUDrivers/RTIMULSM9DS0.h"
