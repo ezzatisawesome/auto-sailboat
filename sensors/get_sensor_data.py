@@ -27,3 +27,28 @@ poll_interval = imu.IMUGetPollInterval()
 
 def heading():
     pass
+
+
+""""
+import serial
+
+
+ser = serial.Serial('/dev/ttyACM0', 115200)
+while 1:
+    if(ser.in_waiting > 0):
+        line = ser.readline()
+        print(line)
+
+
+class comm_arduino:
+    def __init__(com = '/dev/ttyACMO', baud_rate = 115200):
+        self.ser = serial.Serial(com, baud_rate)
+    def getEncoder(self):
+        self.ser.write('1')
+        return self.ser.readline()
+    def getGPS(self):
+        pass
+    def getEncoderGPS(self):
+        pass
+    def close():
+        self.ser.close()
