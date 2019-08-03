@@ -1,4 +1,4 @@
-import math
+from math import *
 
 class waypoints:
     def __init__(self):
@@ -27,9 +27,16 @@ class waypoints:
         c = 2 * asin(sqrt(a))
 
         return self.R * c
+    
+    def lawofcosines(self):
+        lat, long1 = self.decode(key1)
+        lat2, long2 = self.decode(key2)
+        return self.R * acos(sin(lat1) * sin(lat2) * cos(lat1) * cos(lat2) * cos(lon1-long2)) #this is using the spherical Law of Cosines
 
         
-    def cal_bearing(self):
-        y = math.sin(self.long2-self.long1) * math.cos(self.lat2)
-        x = math.cos(self.lat1) * math.sin(self.lat2) -  math.sin(self.lat1) * math.cos(self.lat2) * math.cos(self.long2-self.long1)
-        return math.atan2(y,x)
+    def cal_bearing(self, key1: int, key2: int):
+        lat1, long1 = self.decode(key1)
+        lat2, long2 = self.decode(key2)
+        y = sin(long2-long1) * cos(lat2)
+        x = cos(lat1) * sin(lat2) - sin(lat1) * cos(lat2) * cos(long2-long1)
+        return atan2(y,x)
