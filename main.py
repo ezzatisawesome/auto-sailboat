@@ -1,12 +1,23 @@
-'''
-loop that runs all other files in order
-'''
-from autonomous import navigation, sheeting
-from sensors import windvane, gps
-from sensors.IMU import *
+from sensors.sensor import sensor_data
+from waypoint import waypoints
+import time
+import signal
 
-sheet = sheeting.sheet
-navigation = navigation.navigation
+wp = waypoints()
+sensors = sensor_data()
 
-def main():
-    pass
+sensors.connectArduino()
+
+user_on = True
+
+try:
+    while user_on:
+        sensors.callArduino()
+        print(str(sensors.latitude())+','+str(sensors.longitude()))
+        print(sensors.windvane())
+        print(sensors.heading())
+        time.sleep(3)
+except KeyboardInterrupt:
+    print("\ninterrupt: cutting arduino connection and stopping program")
+finally:
+    sensors.endSerial()

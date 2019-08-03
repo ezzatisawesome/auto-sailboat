@@ -1,11 +1,7 @@
 import math
 import sys
 import time
-import sensors
-
-'''
-this takes in 
-'''
+import sensor
 
 class sheet:
     def __init__(self, opt_angle, sheet_length, diameter, exit2boom, rel_wind = 0):
@@ -19,6 +15,6 @@ class sheet:
         self.opt_angle = 3 + 3 * math.cos(self.rel_wind) #equation is 3+3cos(rel_wind)    limit to 0 and 2pi
         return(self.opt_angle)
     
-    def sheet(self, opt_angle, sheet_length):  #funciton to calculate rotations pulley (pul_rot) has to make to based on sheet_length based on opt_sail_angle
+    def sheet(self, opt_angle, sheet_length):  #funciton to calculate rotations pulley (pul_rot) has to make to based on sheet_length based and  opt_sail_angle
         self.sheet_length = math.sqrt(math.pow(self.sheet_length,2) + math.pow(self.exit2boom,2) - 2 * self.sheet_length * self.exit2boom * math.cos(self.opt_angle))
         self.pul_rot = 360 * (self.sheet_length / self.diameter * math.pi) #finds the revolution(s) that the servo
