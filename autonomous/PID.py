@@ -26,7 +26,9 @@ class PID:
         
         self.windup_guard = 20.0
         self.output = 0.0
-    
+    def setpoint(self, setpoint):
+        self.SetPoint = setpoint
+
     def update(self, feedback):
         self.error = feedback - self.SetPoint
         
@@ -60,6 +62,8 @@ class PID:
             self.last_error = self.error
 
             self.output = self.PTerm + (self.Ki * self.ITerm) + (self.Kd * self.DTerm)
+
+            return(self.output)
     
     def setSampleTime(self, sample_time):
         self.sample_time = sample_time

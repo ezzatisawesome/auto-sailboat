@@ -1,28 +1,33 @@
 from sensors.sensor import sensor_data 
 from autonomous.waypoint import waypoints
+from autonomous.PID import PID
 import time
 import signal
+import RPi.GPIO as GPIO
 
 wp = waypoints() #create instance of waypoints class
 sensors = sensor_data() #create instance of sensor_data class
 
+servoPIN = 17
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(servoPIN, GPIO.OUT)
+
 sensors.connectArduino() # establish connection to arduino
 
+p = 1.0
+i = 0.5
+d = 0.3
+pid = PID(p, i, d)
+pid.clear()
+pid.setpoint(0)
+
 user_on = True
-test_coordinate = (42.324988, -87.845216)
-test2 = (42.324958, -87.841385)
 
 try:
     while user_on:
         heading = sensors.heading()
-        sensors.callArduino()
-        position = sensors.coords()
-        wp.modifyWp(0, test2)
-        wp.modifyWp(1, test_coordinate)
-        distance = wp.haversine(0, 1)
-        angle = wp.cal_bearing(0, 1)
-        print(distance)
-        print(angle)
+        beta = pid.update(heading)
+        print(beta)
 
 
         

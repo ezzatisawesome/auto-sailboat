@@ -22,7 +22,8 @@ class sensor_data:
         while i < 1: 
             if imu.IMURead():
                 x, y, z = imu.getFusionData() #gets x, y, and z values of imu
-                return ("%f,%f,%f" % (x,y,z)) #need to round values
+                #return ("%f,%f,%f" % (x,y,z)) #need to round values
+                return y
                 i += 1
 
     #all these functions are for calling sensor data from the arduino
